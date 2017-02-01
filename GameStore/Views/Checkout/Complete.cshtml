@@ -1,0 +1,11 @@
+﻿
+@{
+    ViewBag.Title = "Checkout Complete";
+}
+<h2>Order Complete</h2>
+<p>Thanks for your order nr: @Model</p>
+<p>
+   Go back to buy something more
+    @Html.ActionLink("store","Index", "Home")
+</p>
+

@@ -1,0 +1,16 @@
+﻿@model GameStore.Models.Genre
+
+@{
+    ViewBag.Title = "Browse";
+}
+
+<h2>Browsing Genre: @Model.Name</h2>
+<ul>
+    @foreach (var game in Model.Games)
+    {
+        <li>
+            @Html.ActionLink(game.Title,"Details", new { id = game.GameId }, new { @class = "my-class" })
+        </li>
+    }
+</ul>
+

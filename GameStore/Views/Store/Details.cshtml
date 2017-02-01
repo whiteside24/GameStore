@@ -1,0 +1,32 @@
+﻿@model GameStore.Models.Game
+
+@{
+    ViewBag.Title = "Game - " + Model.Title; ;
+}
+
+<h2>Game: @Model.Title</h2>
+<p>
+    <img alt="@Model.Title"
+         src="@Model.GamePicture" />
+</p>
+<div id="game-details">
+    <p>
+        <em>Genre:</em>
+        @Model.Genre.Name
+    </p>
+    <p>
+        <em>Studio:</em>
+        @Model.Studio.Name
+    </p>
+    <p>
+        <em>Platform:</em>
+        @Model.Platform.Name
+    </p>
+    <p>
+        <em>Price:</em>
+        @String.Format("{0:F}",Model.Price)
+    </p>
+    <p class="button">
+        @Html.ActionLink("Add to cart", "AddToCart", "ShoppingCart", new { id = Model.GameId }, "")
+    </p>
+</div>
